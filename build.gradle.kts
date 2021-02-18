@@ -22,6 +22,8 @@ dependencies {
     implementation("io.rest-assured:rest-assured:$restAssuredVersion")
     testImplementation("org.junit.jupiter:junit-jupiter-api:$jUnitVersion")
     testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:$jUnitVersion")
+    testImplementation("org.seleniumhq.selenium:selenium-java:3.141.59")
+    testImplementation("io.github.bonigarcia:webdrivermanager:3.8.1")
 }
 drill {
     version = "0.14.8"
@@ -29,13 +31,10 @@ drill {
     // groupId = "pet-mcr" //if we are testion microservice uncomment this and write groupId
     agentId = "Petclinic"
     adminPort = 8090
-//    additionalParams = mutableMapOf(
-//        "browserProxyAddress" to "$adminHost:7777"
-//    )
     logFile = File("agent log")
     logLevel = com.epam.drill.agent.runner.LogLevels.DEBUG
 }
 
-tasks.withType<Test>{
+tasks.withType<Test> {
     useJUnitPlatform()
 }

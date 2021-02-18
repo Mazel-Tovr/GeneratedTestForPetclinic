@@ -1,4 +1,3 @@
 .idea
-build
 **/com/epam/**
-.gradle
+

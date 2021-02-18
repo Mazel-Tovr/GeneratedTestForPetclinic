@@ -1,0 +1,64 @@
+2021-02-18 13:36:37:131 [WINDOWS][DEBUG][AutoTestAgentLogger] Init event 
+2021-02-18 13:36:37:158 [WINDOWS][DEBUG][AutoTestAgentLogger] Attempting to start a Drill4J test session... 
+2021-02-18 13:36:39:763 [WINDOWS][WARN][AutoTestAgentLogger] Can't startSession 'ba520307-9288-487a-96bc-c261700b8a30' kotlin.IllegalStateException: Can't perform request: HttpResponse(code=500, headers={}, body=)
+    at kfun:kotlin.Throwable#<init>(kotlin.String?;kotlin.Throwable?){} (000000005663af50)
+    at kfun:kotlin.Throwable#<init>(kotlin.String?){} (000000005663b260)
+    at kfun:kotlin.Exception#<init>(kotlin.String?){} (0000000056634630)
+    at kfun:kotlin.RuntimeException#<init>(kotlin.String?){} (0000000056634810)
+    at kfun:kotlin.IllegalStateException#<init>(kotlin.String?){} (0000000056634c50)
+    at kfun:com.epam.drill.test.agent.actions.SessionController.getToken#internal (00000000568aee00)
+    at kfun:com.epam.drill.test.agent.actions.SessionController.dispatchAction#internal (00000000568ae6a0)
+    at kfun:com.epam.drill.test.agent.actions.SessionController#startSession(kotlin.String?;kotlin.String;kotlin.Boolean;kotlin.String?;kotlin.Boolean){}kotlin.Unit? (00000000568ac930)
+    at kfun:com.epam.drill.test.agent.actions.SessionController#startSession$default(kotlin.String?;kotlin.String?;kotlin.Boolean;kotlin.String?;kotlin.Boolean;kotlin.Int){}kotlin.Unit? (00000000568ad3d0)
+    at kfun:com.epam.drill.test.agent#jvmtiEventVMInitEvent(kotlinx.cinterop.CPointer<kotlinx.cinterop.CPointerVarOf<kotlinx.cinterop.CPointer<com.epam.drill.jvmapi.gen.jvmtiInterface_1_>>>?;kotlinx.cinterop.CPointer<kotlinx.cinterop.CPointerVarOf<kotlinx.cinterop.CPointer<com.epam.drill.jvmapi.gen.JNINativeInterface_>>>?;kotlinx.cinterop.CPointer<cnames.structs._jobject>?){} (00000000568a98a0)
+    at _636f6d2e6570616d2e6472696c6c2e6175746f746573743a6175746f746573742d6167656e74_knbridge11 (00000000568ab050)
+    at  (00000000571321aa)
+    at  (00000000571c5e73)
+    at  (00000000570de750)
+    at  (00007ff6ae942264)
+    at  (00007ff6ae94cf50)
+    at  (00007ff6ae94cf7c)
+    at  (00007ffbcf867c10)
+    at  (00007ffbd070d700)
+
+2021-02-18 13:36:39:851 [jvm][DEBUG][com.epam.drill.test.agent.instrumentation.StrategyManager] Added strategies: TestNGStrategy, Selenium, CucumberV5, OkHttpClient, ApacheClient, JavaHttpUrlConnection, JMeterStrategy, CucumberV4, JUnit5Strategy, JUnitStrategy, Spock 
+2021-02-18 13:36:40:282 [WINDOWS][DEBUG][AutoTestAgentLogger] Class 'org/junit/platform/engine/support/hierarchical/NodeTestTaskContext' was transformed 
+2021-02-18 13:36:40:282 [WINDOWS][DEBUG][AutoTestAgentLogger] Applying instrumenting (old: 1991 to new: 2079) 
+2021-02-18 13:36:40:282 [WINDOWS][INFO][AutoTestAgentLogger] Successfully instrumented class org/junit/platform/engine/support/hierarchical/NodeTestTaskContext 
+2021-02-18 13:36:40:317 [jvm][INFO][TestListener] Test: [engine:junit-jupiter]/[class:test.api.example.AddPageTestExample]/[method:getAddPetsPage()] STARTED 
+2021-02-18 13:36:40:919 [WINDOWS][DEBUG][AutoTestAgentLogger] Class 'org/apache/http/conn/ManagedClientConnection' was transformed 
+2021-02-18 13:36:40:919 [WINDOWS][DEBUG][AutoTestAgentLogger] Applying instrumenting (old: 1278 to new: 1278) 
+2021-02-18 13:36:40:919 [WINDOWS][INFO][AutoTestAgentLogger] Successfully instrumented class org/apache/http/conn/ManagedClientConnection 
+2021-02-18 13:36:40:920 [WINDOWS][DEBUG][AutoTestAgentLogger] Class 'org/apache/http/conn/ManagedHttpClientConnection' was transformed 
+2021-02-18 13:36:40:920 [WINDOWS][DEBUG][AutoTestAgentLogger] Applying instrumenting (old: 464 to new: 464) 
+2021-02-18 13:36:40:920 [WINDOWS][INFO][AutoTestAgentLogger] Successfully instrumented class org/apache/http/conn/ManagedHttpClientConnection 
+2021-02-18 13:36:40:958 [WINDOWS][DEBUG][AutoTestAgentLogger] Class 'org/apache/http/conn/OperatedClientConnection' was transformed 
+2021-02-18 13:36:40:958 [WINDOWS][DEBUG][AutoTestAgentLogger] Applying instrumenting (old: 745 to new: 745) 
+2021-02-18 13:36:40:958 [WINDOWS][INFO][AutoTestAgentLogger] Successfully instrumented class org/apache/http/conn/OperatedClientConnection 
+2021-02-18 13:36:41:055 [WINDOWS][DEBUG][AutoTestAgentLogger] Class 'org/apache/http/impl/AbstractHttpClientConnection' was transformed 
+2021-02-18 13:36:41:055 [WINDOWS][DEBUG][AutoTestAgentLogger] Applying instrumenting (old: 7759 to new: 8424) 
+2021-02-18 13:36:41:055 [WINDOWS][INFO][AutoTestAgentLogger] Successfully instrumented class org/apache/http/impl/AbstractHttpClientConnection 
+2021-02-18 13:36:41:157 [jvm][INFO][TestListener] Test: [engine:junit-jupiter]/[class:test.api.example.AddPageTestExample]/[method:getAddPetsPage()] FINISHED. Result:FAILED 
+2021-02-18 13:36:41:158 [jvm][INFO][TestListener] Test: [engine:junit-jupiter]/[class:test.api.example.AddPageTestExample]/[method:getAddOwnerPage()] STARTED 
+2021-02-18 13:36:41:165 [jvm][INFO][TestListener] Test: [engine:junit-jupiter]/[class:test.api.example.AddPageTestExample]/[method:getAddOwnerPage()] FINISHED. Result:FAILED 
+2021-02-18 13:36:41:178 [WINDOWS][DEBUG][AutoTestAgentLogger] vmDeathEvent 
+2021-02-18 13:36:41:178 [WINDOWS][INFO][AutoTestAgentLogger] Shutting the agent down 
+2021-02-18 13:36:41:178 [WINDOWS][DEBUG][AutoTestAgentLogger] Attempting to stop a Drill4J test session... 
+2021-02-18 13:36:43:254 [WINDOWS][WARN][AutoTestAgentLogger] Can't stopSession ba520307-9288-487a-96bc-c261700b8a30 kotlin.IllegalStateException: Can't perform request: HttpResponse(code=500, headers={}, body=)
+    at kfun:kotlin.Throwable#<init>(kotlin.String?;kotlin.Throwable?){} (000000005663af50)
+    at kfun:kotlin.Throwable#<init>(kotlin.String?){} (000000005663b260)
+    at kfun:kotlin.Exception#<init>(kotlin.String?){} (0000000056634630)
+    at kfun:kotlin.RuntimeException#<init>(kotlin.String?){} (0000000056634810)
+    at kfun:kotlin.IllegalStateException#<init>(kotlin.String?){} (0000000056634c50)
+    at kfun:com.epam.drill.test.agent.actions.SessionController.getToken#internal (00000000568aee00)
+    at kfun:com.epam.drill.test.agent.actions.SessionController.dispatchAction#internal (00000000568ae6a0)
+    at kfun:com.epam.drill.test.agent.actions.SessionController#stopSession(kotlin.String?){}kotlin.Unit? (00000000568ad750)
+    at kfun:com.epam.drill.test.agent.actions.SessionController#stopSession$default(kotlin.String?;kotlin.Int){}kotlin.Unit? (00000000568ae520)
+    at kfun:com.epam.drill.test.agent.Agent#agentOnUnload(){} (00000000568a6a90)
+    at kfun:com.epam.drill.test.agent#agentOnUnload(kotlinx.cinterop.CPointer<kotlinx.cinterop.CPointerVarOf<kotlinx.cinterop.CPointer<com.epam.drill.jvmapi.gen.JNIInvokeInterface_>>>){} (00000000568c6170)
+    at Agent_OnUnload (00000000568fbec0)
+    at  (00000000571c58ce)
+    at  (0000000057194460)
+    at  (0000000057106ba0)
+    at  (0000000002f00000)
+
