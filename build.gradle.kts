@@ -20,13 +20,15 @@ dependencies {
     implementation(kotlin("stdlib"))
     implementation("com.squareup:kotlinpoet:1.7.2")
     implementation("io.rest-assured:rest-assured:$restAssuredVersion")
-    testImplementation("org.junit.jupiter:junit-jupiter-api:$jUnitVersion")
-    testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:$jUnitVersion")
+//    testImplementation("org.junit.jupiter:junit-jupiter-api:$jUnitVersion")
+//    testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:$jUnitVersion")
+
     testImplementation("org.seleniumhq.selenium:selenium-java:3.141.59")
     testImplementation("io.github.bonigarcia:webdrivermanager:3.8.1")
+    testImplementation("org.testng:testng:7.1.0")
 }
 drill {
-    version = "0.14.8"
+    version = "0.15.0"
     adminHost = "localhost"
     // groupId = "pet-mcr" //if we are testion microservice uncomment this and write groupId
     agentId = "Petclinic"
@@ -36,5 +38,6 @@ drill {
 }
 
 tasks.withType<Test> {
-    useJUnitPlatform()
+    //useJUnitPlatform()
+    useTestNG()
 }

@@ -1,25 +1,29 @@
 //package test.ui.example
 //
-//import org.junit.jupiter.api.*
+//import io.github.bonigarcia.wdm.*
 //import org.openqa.selenium.*
 //import org.openqa.selenium.chrome.*
+//import org.testng.annotations.*
 //
 //class SimpleTest {
 //
-//    private val petclinicUrl = "http://localhost:8080"
-//    private lateinit var driver: WebDriver
+//    companion object {
+//        private val driver: ChromeDriver = ChromeDriver()
+//        private val petclinicUrl = "http://localhost:8080"
 //
-//    @BeforeAll
-//    fun beforeClass() {
+//        @BeforeClass
+//        @JvmStatic
+//        fun beforeClass() {
+//            WebDriverManager.chromedriver().setup()
+//            driver[petclinicUrl]
+//        }
 //
-//        WebDriverManager.chromedriver().setup()
-//        driver = ChromeDriver()
-//        driver[petclinicUrl]
-//    }
+//        @AfterClass
+//        @JvmStatic
+//        fun afterClass() {
+//            driver.quit()
+//        }
 //
-//    @AfterAll
-//    fun afterClass() {
-//        driver!!.quit()
 //    }
 //
 //    @Test
@@ -27,13 +31,12 @@
 //        driver.findElement(By.xpath("//a[@title='find owners']")).click()
 //        driver.findElement(By.id("lastName")).sendKeys("Davis")
 //        driver.findElement(By.xpath("//button[@type='submit']")).click()
-//        val owner = driver.findElement(By.xpath("//a[@href='/owners/2']")).text
+//        driver.findElement(By.xpath("//a[@href='/owners/2']")).text
 //    }
 //
 //    @Test
 //    fun vetListTestTestNG() {
 //        driver.findElement(By.xpath("//a[@title='veterinarians']")).click()
-//        val vet = driver.findElement(By.xpath("//td")).text
-//        // Assert.assertEquals("Betty Davis", vet);
+//        driver.findElement(By.xpath("//td")).text
 //    }
 //}
