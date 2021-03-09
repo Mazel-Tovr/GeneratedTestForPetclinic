@@ -1,7 +1,6 @@
 import com.squareup.kotlinpoet.*
 import org.openqa.selenium.chrome.*
 import org.testng.annotations.*
-import java.io.*
 
 private const val fieldName = "petclinicUrl"
 private const val driverName = "driver"
@@ -9,11 +8,21 @@ private const val url = "http://localhost:8080"
 private const val pathToTestPackage = "src/test/kotlin"
 
 fun main() {
-    for (i in 1..400) {
+    for (i in 1..1000) {
+        /*
+            Simple petclinic
+         */
+        /*
          GenerateHomePageTest.getGeneratedTest(clazzName = "HomePageTest$i", id = i).writeTo(File(pathToTestPackage))
          GenerateEditPage.getGeneratedTest(clazzName = "EditPageTest$i", id = i).writeTo(File(pathToTestPackage))
          GenerateAddPageTest.getGeneratedTest(clazzName = "AddPageTest$i", id = i).writeTo(File(pathToTestPackage))
-       // GenerateSimpleUITests.getGeneratedTest(clazzName = "UiTest$i", id = i).writeTo(File(pathToTestPackage))
+        GenerateSimpleUITests.getGeneratedTest(clazzName = "UiTest$i", id = i).writeTo(File(pathToTestPackage))
+        */
+
+        /*
+        Fat petclinic
+         */
+        GenerateRandomTest.getGeneratedTest(clazzName = "CallMethods$i", id = i)
     }
 }
 
@@ -54,7 +63,7 @@ object GenerateHomePageTest {
 
     private fun getErrorPageTestFunction(id: Int) = FunSpec.builder("getErrorPage$id")
         .addAnnotation(Test::class)
-        .addStatement("io.restassured.RestAssured.given().get(\"${'$'}petclinicUrl/oups\").then().statusCode(200)")
+        .addStatement("io.restassured.RestAssured.given().get(\"${'$'}petclinicUrl/oups\").then().statusCode(500)")
         .build()
 
 }
@@ -154,9 +163,9 @@ object GenerateRandomTest {
             .build()
     }
 
-    private fun postRandomMethods(id: Int) = FunSpec.builder("getHomePage$id")
+    private fun postRandomMethods(testId: Int) = FunSpec.builder("callMethods${testId * 10}")
         .addAnnotation(Test::class)
-        .addStatement("io.restassured.RestAssured.given().post(\"${'$'}petclinicUrl/extension/call/method/random/400\").then().statusCode(200)")
+        .addStatement("io.restassured.RestAssured.given().post(\"${'$'}petclinicUrl/extension/call/method/random/${testId * 10}\").then().statusCode(200)")
         .build()
 
 }
@@ -222,6 +231,7 @@ object GenerateSimpleUITests {
         """.trimIndent()
         )
         .build()
+
     private fun vetListTestTestNG(id: Int) = FunSpec.builder("vetListTestTestNG$id")
         .addAnnotation(Test::class)
         .addStatement(

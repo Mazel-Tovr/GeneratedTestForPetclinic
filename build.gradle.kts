@@ -30,10 +30,10 @@ dependencies {
 drill {
     version = "0.15.0"
     adminHost = "localhost"
-    // groupId = "pet-mcr" //if we are testion microservice uncomment this and write groupId
+    // groupId = "pet-mcr" //if we are testing  microservice uncomment this and write groupId
     agentId = "Petclinic"
     adminPort = 8090
-    logFile = File("agent log")
+   // logFile = File("agent log")
     logLevel = com.epam.drill.agent.runner.LogLevels.DEBUG
 }
 
